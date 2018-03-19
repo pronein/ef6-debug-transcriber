@@ -16,6 +16,10 @@ namespace EF6DebugTranscriber.Data.Entities.Maps {
                 .IsRequired()
                 .IsUnicode()
                 .HasMaxLength(64);
+
+            HasMany(he => he.Gear)
+                .WithOptional()
+                .Map(c => c.MapKey("HeroId"));
         }
     }
 }
